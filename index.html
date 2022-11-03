@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varta:wght@300;400;500&amp;display=swap" />
+	<style>
+
+		body{
+			background: url(images/bg-cover.png) round;
+			overflow-y: hidden;
+		}
+
+		.normal img{
+			background: black;
+		}
+
+		@media screen and (max-width: 800px) {
+
+			#frame1:checked~#controls label:nth-child(2),
+			#frame2:checked~#controls label:nth-child(3),
+			#frame3:checked~#controls label:nth-child(4),
+			#frame4:checked~#controls label:nth-child(1),
+			#frame1:checked~#controls label:nth-last-child(2),
+			#frame2:checked~#controls label:nth-last-child(3),
+			#frame3:checked~#controls label:nth-last-child(4),
+			#frame4:checked~#controls label:nth-last-child(1) {
+				margin: 0;
+			}
+		}
+
+		input[type=checkbox] {
+  			display: none;
+		}
+
+		.zoom_gfx img {
+  		margin: 70px;
+  		transition: transform 0.25s ease;
+  		cursor: zoom-in;
+  		max-width: 300px;
+  		max-height: 300px;	
+		}
+
+		#zoom1:checked ~ label > img {
+  		transform: scale(1.3);
+  		cursor: zoom-out;
+  		background: url(images/wheel-bg.jpg);
+		}
+
+		#zoom2:checked ~ label > img {
+  		transform: scale(1.3);
+  		cursor: zoom-out;
+  		background: url(images/wheel-bg.jpg);
+		}
+
+		#zoom3:checked ~ label > img {
+  		transform: scale(1.3);
+  		cursor: zoom-out;
+  		background: url(images/wheel-bg.jpg);
+		}
+
+		#zoom4:checked ~ label > img {
+  		transform: scale(1.3);
+  		cursor: zoom-out;
+  		background: url(images/wheel-bg.jpg);
+		}
+
+		#frame {
+			margin: 0 auto;
+			width: 1152px;
+			max-width: 100%;
+			text-align: center;
+			height: 720px;
+
+		}
+
+		#frame input[type=radio] {
+			display: none;
+		}
+
+		#frame label {
+            cursor: pointer;
+           		}
+
+		#slides {
+			padding: 20px;
+			margin-left:-140px;
+			position: relative;
+			z-index: 1;
+			width: 1280px;
+			height: 720px;
+			overflow-x: hidden;
+		}
+			
+		
+
+		
+		#frame1:checked~#slides .inner.row {
+			margin-left: 0;
+		}
+
+		#frame2:checked~#slides .inner.row {
+			margin-left: -100%;
+		}
+
+		#frame3:checked~#slides .inner.row {
+			margin-left: -200%;
+		}
+
+		#frame4:checked~#slides .inner.row {
+			margin-left: -300%;
+		}
+
+		#slides .inner.row {
+			transition: margin-left 800ms
+				cubic-bezier(0.770, 0.000, 0.175, 1.000);
+			width: 1152px;
+			line-height: 0;
+			height: 720px;
+			display: grid;
+  			grid-template-columns: repeat(12, 1fr);
+		}
+
+		#slides .frame {
+			float: left;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+    
+		#controls {
+			margin: -400px 80px;
+			margin-right: 180px;
+			width: 100%;
+			height: 50px;
+			z-index: 3;
+			position: relative;
+		}
+
+		#controls label {
+			transition: opacity 0.2s ease-out;
+			display: none;
+			width: 50px;
+			height: 50px;
+			opacity: .4;
+		}
+
+		#controls label:hover {
+			opacity: 10;
+		}
+
+		#frame1:checked~#controls label:nth-child(2),
+		#frame2:checked~#controls label:nth-child(3)
+        #frame3:checked~#controls label:nth-child(4),
+        #frame4:checked~#controls label:nth-child(0) {
+
+			background:url(images/rarrow.svg) no-repeat;
+			float: right;
+			margin: 0 -50px 0 0;
+			display: block;
+		}
+
+		#frame1:checked~#controls label:nth-last-child(0),
+		#frame2:checked~#controls label:nth-child(1),
+		#frame3:checked~#controls label:nth-child(2),
+		#frame4:checked~#controls label:nth-last-child(2) {
+			background:url(images/arrow.svg) no-repeat;
+			float: left;
+			margin: 0 0 0 -200px;
+			display: block; 
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="frame">
+		<div style="background-color: black ; margin-left: -200px; padding: -20px; width: 15px; height:40px;"><h3   style="font-family:'Varta'; margin-right: -120px;">WHEELS</h3><pre style="font-family: 'Varta'; padding-left: 38px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Donec id lectus nec felis dictum placerat ut ut eros</pre></div>
+		<input type="radio" name="frame" id="frame1" checked />
+		<input type="radio" name="frame" id="frame2" />
+		<input type="radio" name="frame" id="frame3" />
+		<input type="radio" name="frame" id="frame4" />
+		<div id="slides">
+			<div id="overflow">
+				<div class="inner row">
+					<div class="frame frame_1">
+						<div class="frame-content zoom_gfx ">
+							<input type="checkbox" id="zoom1"/>
+							<label for="zoom1"><img src="images/wgu.png" id="zoom1"></label>
+							<div style="font-family:'Varta';">
+							<h4>17-INCH CAST ALUMINIUM WHEEL, FULLY</h4>
+							<h4>PAINTED SILVER LITHO</h4>
+							<p>Standard on Touring FWD</p>
+							<p>(WGU)</p>
+							</div>
+						</div>
+					</div>
+					<div class="frame frame_2">
+						<div class="frame-content zoom_gfx">
+							<input type="checkbox" id="zoom2"/>
+							<label for="zoom2"><img src="images/wjr.png" id="zoom2"></label>
+							<div style="font-family:'Varta';">
+							<h4>17-INCH CAST ALUMINIUM DIAMOND - CUT WHEEL</h4>
+							<h4>WITH BALTIC GRAY POCKETS</h4>
+							<p>Standard on Touring L FWD/Hybrid and</p>
+							<p>Touring Hybrid</p>
+							<p>(WJR)</p>
+							</div>
+						</div>
+					</div>
+					<div class="frame frame_3">
+						<div class="frame-content zoom_gfx">
+							<input type="checkbox" id="zoom3"/>
+							<label for="zoom3"><img src="images/wp6.png" id="zoom3"></label>
+							<div style="font-family:'Varta';">
+							<h4>18-INCH CAST ALUMINIUM WHEEL WITH</h4>
+							<h4>FORESHADOW FINISH</h4>
+							<p>Included with S Appearance Package on</p>
+							<p>Touring Hybrid, Touring L Hybrid and</p> 
+							<p>Limited Hybrid</p>
+							<p>(WP6)</p>
+							</div>
+						</div>
+					</div>
+					<div class="frame frame_4">
+						<div class="frame-content zoom_gfx">
+							<input type="checkbox" id="zoom4"/>
+							<label for="zoom4"><img src="images/wpf.png" id="zoom4"></label>
+							<div style="font-family:'Varta';">
+							<h4>19-INCH CAST ALUMINIUM WHEEL WITH</h4>
+							<h4>DIAMOND FORESHADOW FINISH</h4>
+							<p>Included with S+ Appearance Package on</p>
+							<p>Touring Hybrid, Touring L Hybrid and</p> 
+							<p>Limited Hybrid</p>
+							<p>(WPF)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="controls">
+			<label for="frame1"></label>
+			<label for="frame2"></label>
+			<label for="frame3"></label>
+			<label for="frame4"></label>
+		</div>
+	</div>
+	</div>
+</body>
+<script type="text/javascript">
+	document.querySelector('#controls').addEventListener('click', () => {
+  	document.getElementById("zoom1").checked = false;
+}); 
+	document.querySelector('#controls').addEventListener('click', () => {
+  	document.getElementById("zoom2").checked = false;
+}); 
+	document.querySelector('#controls').addEventListener('click', () => {
+  	document.getElementById("zoom3").checked = false;
+}); 
+	document.querySelector('#controls').addEventListener('click', () => {
+  	document.getElementById("zoom4").checked = false;
+}); 
+</script>
+</html>
